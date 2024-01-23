@@ -1,0 +1,5 @@
+start_time,end_time,subtitle_text
+0,10,Hello this is the first subtitle.
+10,12,Welcome to the tutorial on adding subtitles.
+15,20,This is an example of subtitles in Python with OpenCV.
+25,30,Feel free to customize the code for your videos.
