@@ -1,10 +1,13 @@
 import cv2 as cv
 import pandas as pd
 
-subtitles=pd.read_csv("C:\\Users\\harsh\\OneDrive\\Desktop\\SR\\t2.3\\subtitles.csv")
+# Enter the relative path to the CSV file
+subtitles=pd.read_csv("")
 
 winname="Video with Subtitles"
-vid_path="C:\\Users\\harsh\\Downloads\\123.mp4"
+
+# Enter the relative path to the video
+vid_path=""
 
 vid=cv.VideoCapture(vid_path)
 
@@ -17,7 +20,7 @@ length=len(subtitles['subtitle_text'].iloc[subtitle_index])
 size=int(input("Enter the size of the subtitle text: \n"))
 thickness=int(input("Enter the thickness of the subtitle text: \n"))
 
-org=int(input("Organisation of the subtitles:\n1.Top\n2.Bottom"))
+org=int(input("Organisation of the subtitles:\n1.Top\n2.Bottom\n"))
 
 if org==1:
     kern=(840-size*length,160)
@@ -40,7 +43,7 @@ while True:
 
         cv.putText(frame,text, (840-3*length,1960), cv.FONT_HERSHEY_COMPLEX, size, (255,255,255), thickness)
 
-#160  1960
+
     if timer>=subtitle_end:
         subtitle_index+=1
         if subtitle_index < len(subtitles):
